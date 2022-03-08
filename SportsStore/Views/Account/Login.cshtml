@@ -1,0 +1,28 @@
+﻿@model LoginModel
+@{
+    ViewBag.Title = "Log In";
+    Layout = "_AdminLayout";
+}
+
+<div class="text-danger" asp-validation-summary="All"></div>
+
+
+<!--Form dibawah ini berguna untuk form username atau name-->
+<form asp-action="Login" asp-controller="Account" method="post">
+    <input type="hidden" asp-for="ReturnUrl" />
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <div><span asp-validation-for="Name" class="text-danger"></span></div>
+        <input asp-for="Name" class="form-control" />
+    </div
+
+<!-- sedangkan untuk dibawah ini merupakan type input untuk password-->
+    <div class="form-group">
+        <label asp-for="Password"></label>
+        <div><span asp-validation-for="Password" class="text-danger"></span></div>
+        <input asp-for="Password" class="form-control" />
+    </div>
+
+    <!--di bawah ini tag button yang berfungsi untuk login-->
+    <button class="btn btn-primary" type="submit">Log In</button>
+</form>
